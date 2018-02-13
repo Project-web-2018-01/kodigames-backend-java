@@ -19,6 +19,5 @@ public class GameMapper {
                 gameDto.getGameId (),
                 gameDto.getName (),
                 gameDto.getDesc ());
-
     }
 }
