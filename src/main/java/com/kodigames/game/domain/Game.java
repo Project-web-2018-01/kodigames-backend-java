@@ -1,6 +1,5 @@
 package com.kodigames.game.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,10 +10,8 @@ public class Game {
     @GeneratedValue
     private Long gameId;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "description")
     private String desc;
 
     public Game() {
