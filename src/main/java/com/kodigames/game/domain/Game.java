@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "GAME")
+@Table(name = "GAMES")
 public class Game {
     private Long gameId;
 
@@ -24,7 +24,7 @@ public class Game {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "GAME_ID")
+    @Column(name = "ID")
     public Long getGameId() {
         return gameId;
     }
