@@ -1,13 +1,11 @@
 package com.kodigames.game.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "GAME")
 public class Game {
-    @Id
-    @GeneratedValue
     private Long gameId;
 
     private String name;
@@ -23,14 +21,22 @@ public class Game {
         this.desc = desc;
     }
 
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "GAME_ID")
     public Long getGameId() {
         return gameId;
     }
 
+    @NotNull
+    @Column(name = "NAME")
     public String getName() {
         return name;
     }
 
+    @NotNull
+    @Column(name = "DESCRIPTION")
     public String getDesc() {
         return desc;
     }

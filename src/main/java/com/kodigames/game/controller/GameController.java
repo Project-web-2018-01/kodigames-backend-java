@@ -9,7 +9,7 @@ public class GameController {
     private GameMapper gameMapper;
 
     @Autowired
-    GameDbService dbService;
+    private GameDbService dbService;
 
     //void createGame(Game game);
     //GameDto getGame(Long gameId);
