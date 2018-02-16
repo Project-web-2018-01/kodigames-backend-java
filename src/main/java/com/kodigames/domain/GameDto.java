@@ -1,4 +1,4 @@
-package com.kodigames.game.domain;
+package com.kodigames.domain;
 
 public class GameDto {
     private Long gameId;

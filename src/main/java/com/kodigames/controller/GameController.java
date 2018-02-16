@@ -1,7 +1,7 @@
-package com.kodigames.game.controller;
+package com.kodigames.controller;
 
-import com.kodigames.game.mapper.GameMapper;
-import com.kodigames.game.service.GameDbService;
+import com.kodigames.mapper.GameMapper;
+import com.kodigames.service.GameDbService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class GameController {

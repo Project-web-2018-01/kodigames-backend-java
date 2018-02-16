@@ -1,4 +1,4 @@
-package com.kodigames.game.domain;
+package com.kodigames.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

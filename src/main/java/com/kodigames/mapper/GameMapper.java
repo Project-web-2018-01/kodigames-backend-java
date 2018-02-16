@@ -1,7 +1,7 @@
-package com.kodigames.game.mapper;
+package com.kodigames.mapper;
 
-import com.kodigames.game.domain.Game;
-import com.kodigames.game.domain.GameDto;
+import com.kodigames.domain.Game;
+import com.kodigames.domain.GameDto;
 import org.springframework.stereotype.Component;
 
 @Component

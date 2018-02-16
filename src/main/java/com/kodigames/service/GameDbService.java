@@ -1,6 +1,6 @@
-package com.kodigames.game.service;
+package com.kodigames.service;
 
-import com.kodigames.game.repository.GameRepository;
+import com.kodigames.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class GameDbService {
