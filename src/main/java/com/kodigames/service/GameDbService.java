@@ -3,9 +3,11 @@ package com.kodigames.service;
 import com.kodigames.domain.Game;
 import com.kodigames.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class GameDbService {
     @Autowired
     private GameRepository repository;
