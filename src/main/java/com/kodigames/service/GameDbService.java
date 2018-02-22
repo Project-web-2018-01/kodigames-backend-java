@@ -1,14 +1,28 @@
 package com.kodigames.service;
 
+import com.kodigames.domain.Game;
 import com.kodigames.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Optional;
+
 public class GameDbService {
     @Autowired
-    private GameRepository gameRepository;
+    private GameRepository repository;
 
-    //void createGame(Game game);
-    //Game getGame(Long gameId);
-    //Game updateGame(GameDto gameDto);
-    //void deleteGame(Long gameId);
+    public void createGame(Game game) {
+        repository.save (game);
+    }
+
+    public Optional<Game> getGame(Long gameId) {
+        return repository.findById (gameId);
+    }
+
+    public Game updateGame(Game game) {
+        return repository.save (game);
+    }
+
+    public void deleteGame(Long gameId) {
+        repository.deleteById (gameId);
+    }
 }
