@@ -9,13 +9,13 @@ public class GameRatingMapper {
 
     public GameRating mapToGameRatingDto(final GameRatingDto gameRatingDto) {
         return new GameRating(
-                gameRatingDto.getRatingId(),
+                gameRatingDto.getId(),
                 gameRatingDto.getRate());
     }
 
     public GameRatingDto mapToGameRating(final GameRating gameRating) {
         return new GameRatingDto(
-                gameRating.getRatingId(),
+                gameRating.getId(),
                 gameRating.getRate());
     }
 }

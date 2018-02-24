@@ -1,19 +1,27 @@
 package com.kodigames.domain;
 
 public class GameRatingDto {
-    long ratingId;
-    int rate;
+    private long id;
+    private int rate;
 
-    public GameRatingDto(long ratingId, int rate) {
-        this.ratingId = ratingId;
+    public GameRatingDto(long id, int rate) {
+        this.id = id;
         this.rate = rate;
     }
 
-    public long getRatingId() {
-        return ratingId;
+    public long getId() {
+        return id;
     }
 
     public int getRate() {
         return rate;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 }
