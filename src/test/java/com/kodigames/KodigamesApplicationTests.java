@@ -12,5 +12,4 @@ public class KodigamesApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
 }
