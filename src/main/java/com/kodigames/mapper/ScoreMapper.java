@@ -9,17 +9,13 @@ public class ScoreMapper {
 
     public ScoreDto mapToScoreDto(final Score score) {
         return new ScoreDto(
-                score.getGameId(),
-                score.getGameId(),
-                score.getUserId(),
+                score.getId(),
                 score.getScore());
     }
 
-    public Score mapToScoreDto(final ScoreDto scoreDto) {
+    public Score mapToScore(final ScoreDto scoreDto) {
         return new Score(
-                scoreDto.getGameId(),
-                scoreDto.getGameId(),
-                scoreDto.getUserId(),
+                scoreDto.getId(),
                 scoreDto.getScore());
     }
 }
