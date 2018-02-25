@@ -1,41 +1,21 @@
 package com.kodigames.domain;
 
-public class ScoreDto {
+public final class ScoreDto {
 
-    private long Id;
-    private long gameId;
-    private long userId;
+    private long id;
     private int score;
 
-    public ScoreDto(long Id, long gameId, long userId, int score) {
-        this.Id = Id;
-        this.gameId = gameId;
-        this.userId = userId;
+    public ScoreDto(long id, int score) {
+        this.id = id;
         this.score = score;
     }
 
     public long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(long id) {
-        Id = id;
-    }
-
-    public long getGameId() {
-        return gameId;
-    }
-
-    public void setGameId(long gameId) {
-        this.gameId = gameId;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
+        this.id = id;
     }
 
     public int getScore() {
