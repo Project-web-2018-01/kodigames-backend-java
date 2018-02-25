@@ -8,17 +8,17 @@ import org.springframework.stereotype.Component;
 public class GameMapper {
 
     public GameDto mapToGameDto(final Game game) {
-        return new GameDto(
-                game.getId(),
-                game.getName(),
-                game.getDesc());
+        return new GameDto (
+                game.getGameId (),
+                game.getName (),
+                game.getDesc ());
     }
 
     public Game mapToGame(final GameDto gameDto) {
-        return new Game(
-                gameDto.getId(),
-                gameDto.getName(),
-                gameDto.getDesc());
+        return new Game (
+                gameDto.getGameId (),
+                gameDto.getName (),
+                gameDto.getDesc ());
     }
 
 }

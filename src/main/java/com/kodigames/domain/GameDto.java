@@ -1,18 +1,18 @@
 package com.kodigames.domain;
 
-public final class GameDto {
-    private Long id;
+public class GameDto {
+    private Long gameId;
     private String name;
     private String desc;
 
-    public GameDto(Long id, String name, String desc) {
-        this.id = id;
+    public GameDto(Long gameId, String name, String desc) {
+        this.gameId = gameId;
         this.name = name;
         this.desc = desc;
     }
 
-    public Long getId() {
-        return id;
+    public Long getGameId() {
+        return gameId;
     }
 
     public String getName() {
@@ -22,17 +22,4 @@ public final class GameDto {
     public String getDesc() {
         return desc;
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
 }
