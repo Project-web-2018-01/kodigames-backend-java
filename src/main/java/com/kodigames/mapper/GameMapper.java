@@ -9,7 +9,7 @@ public class GameMapper {
 
     public GameDto mapToGameDto(final Game game) {
         return new GameDto (
-                game.getGameId (),
+                game.getId (),
                 game.getName (),
                 game.getDesc ());
     }

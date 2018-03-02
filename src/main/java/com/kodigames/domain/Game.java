@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "GAMES")
 public class Game {
-    private Long gameId;
+    private long id;
 
     private String name;
 
@@ -15,8 +15,8 @@ public class Game {
     public Game() {
     }
 
-    public Game(Long gameId, String name, String desc) {
-        this.gameId = gameId;
+    public Game(long gameId, String name, String desc) {
+        this.id = gameId;
         this.name = name;
         this.desc = desc;
     }
@@ -25,8 +25,8 @@ public class Game {
     @GeneratedValue
     @NotNull
     @Column(name = "ID")
-    public Long getGameId() {
-        return gameId;
+    public long getId() {
+        return id;
     }
 
     @NotNull
