@@ -5,18 +5,16 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "GAMES")
-public class Game {
+public final class Game {
     private long id;
-
     private String name;
-
     private String desc;
 
     public Game() {
     }
 
-    public Game(long gameId, String name, String desc) {
-        this.id = gameId;
+    public Game(long id, String name, String desc) {
+        this.id = id;
         this.name = name;
         this.desc = desc;
     }
@@ -24,7 +22,7 @@ public class Game {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "ID")
+    @Column(name = "ID", unique = true)
     public long getId() {
         return id;
     }
@@ -40,4 +38,17 @@ public class Game {
     public String getDesc() {
         return desc;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
 }
