@@ -2,6 +2,8 @@ package com.kodigames.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "USERS")
@@ -11,6 +13,7 @@ public final class User {
     private String surname;
     private String login;
     private String password;
+    private List<Game> games;
 
     public User(Long id, String firstName, String surname, String login, String password) {
         this.id = id;
@@ -18,6 +21,7 @@ public final class User {
         this.surname = surname;
         this.login = login;
         this.password = password;
+        games = new ArrayList<>();
     }
 
     public User() {
