@@ -2,18 +2,20 @@ package com.kodigames.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "GAMES")
 public final class Game {
-    private long id;
+    private Long id;
     private String name;
     private String desc;
+    //private List<UserGames> userGamesList = new ArrayList<> ();
 
     public Game() {
     }
 
-    public Game(long id, String name, String desc) {
+    public Game(Long id, String name, String desc) {
         this.id = id;
         this.name = name;
         this.desc = desc;
@@ -23,7 +25,7 @@ public final class Game {
     @GeneratedValue
     @NotNull
     @Column(name = "ID", unique = true)
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -39,7 +41,16 @@ public final class Game {
         return desc;
     }
 
-    public void setId(long id) {
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "users")
+//    public List<UserGames> getUserGamesList() {
+//        return userGamesList;
+//    }
+//
+//    public void set userGamesList(List<UserGames> userGamesList) {
+//        this.userGamesList = userGamesList;
+//    }
+
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -50,5 +61,6 @@ public final class Game {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
 
 }
