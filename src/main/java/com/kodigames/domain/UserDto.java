@@ -36,7 +36,7 @@ public final class UserDto {
         return password;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
