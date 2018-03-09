@@ -1,9 +1,12 @@
 package com.kodigames.mapper;
 
+import com.kodigames.domain.Game;
+import com.kodigames.domain.GameDto;
 import com.kodigames.domain.User;
 import com.kodigames.domain.UserDto;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
@@ -26,7 +29,7 @@ public class UserMapper {
     }
 
     public List<GameDto> mapToGameDtoList(final List<Game> games) {
-        return new games.strem()
+        return games.stream()
                 .map(g -> new GameDto(g.getId(), g.getName(), g.getDesc()))
                 .collect(Collectors.toList());
     }

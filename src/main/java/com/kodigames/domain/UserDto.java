@@ -2,7 +2,7 @@ package com.kodigames.domain;
 
 public final class UserDto {
 
-    private long id;
+    private Long id;
     private String firstName;
     private String surname;
     private String login;
@@ -16,7 +16,7 @@ public final class UserDto {
         this.password = password;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

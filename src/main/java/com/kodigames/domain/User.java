@@ -8,12 +8,12 @@ import java.util.List;
 @Entity
 @Table(name = "USERS")
 public final class User {
-    private long id;
+    private Long id;
     private String firstName;
     private String surname;
     private String login;
     private String password;
-    private List<Game> games;
+    private List<Game> games = new ArrayList<>();
 
     public User(Long id, String firstName, String surname, String login, String password) {
         this.id = id;
@@ -21,7 +21,7 @@ public final class User {
         this.surname = surname;
         this.login = login;
         this.password = password;
-        games = new ArrayList<>();
+
     }
 
     public User() {
@@ -31,7 +31,7 @@ public final class User {
     @GeneratedValue
     @NotNull
     @Column(name = "ID", unique = true)
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -59,7 +59,7 @@ public final class User {
         return password;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
