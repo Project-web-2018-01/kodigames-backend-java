@@ -10,12 +10,14 @@ public class ScoreMapper {
     public ScoreDto mapToScoreDto(final Score score) {
         return new ScoreDto(
                 score.getId(),
-                score.getScore());
+                score.getScore(),
+                score.getUserGameId());
     }
 
     public Score mapToScore(final ScoreDto scoreDto) {
         return new Score(
                 scoreDto.getId(),
-                scoreDto.getScore());
+                scoreDto.getScore(),
+                scoreDto.getUserGameId());
     }
 }

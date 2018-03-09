@@ -7,12 +7,14 @@ import javax.validation.constraints.NotNull;
 @Table(name = "SCORES")
 public final class Score {
 
-    private long id;
+    private Long id;
     private int score;
+    private Long userGameId;
 
-    public Score(long id, int score) {
+    public Score(Long id, int score, Long userGameId) {
         this.id = id;
         this.score = score;
+        this.userGameId = userGameId;
     }
 
     public Score() {
@@ -22,11 +24,11 @@ public final class Score {
     @GeneratedValue
     @NotNull
     @Column(name = "ID", unique = true)
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -40,4 +42,14 @@ public final class Score {
         this.score = score;
     }
 
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "USER_GAME_ID")
+    public Long getUserGameId() {
+        return userGameId;
+    }
+
+    public void setUserGameId(Long userGameId) {
+        this.userGameId = userGameId;
+    }
 }
