@@ -17,6 +17,7 @@ public final class ScoreDto {
     }
 
     public void setId(Long id) {
+
         this.id = id;
     }
 
