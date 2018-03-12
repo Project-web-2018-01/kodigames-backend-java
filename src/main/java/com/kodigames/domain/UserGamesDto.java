@@ -1,12 +1,12 @@
 package com.kodigames.domain;
 
-public final class UserGames {
+public final class UserGamesDto {
     private Long id;
     private Long user_id;
     private Long game_id;
     private int rate;
 
-    public UserGames(Long id, Long user_id, Long game_id, int rate) {
+    public UserGamesDto(Long id, Long user_id, Long game_id, int rate) {
         this.id = id;
         this.user_id = user_id;
         this.game_id = game_id;
