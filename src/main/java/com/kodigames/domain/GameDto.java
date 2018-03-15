@@ -32,5 +32,4 @@ public final class GameDto {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-
 }
