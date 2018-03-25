@@ -13,11 +13,11 @@ public class UserGameMapper {
                 userGame.getRate());
     }
 
-    public UserGame mapToUserGame(final UserGameDto userGamesDto) {
-        return new UserGame(userGamesDto.getId(),
-                userGamesDto.getUserId(),
-                userGamesDto.getGameId(),
-                userGamesDto.getRate());
+    public UserGame mapToUserGame(final UserGameDto userGameDto) {
+        return new UserGame(userGameDto.getId(),
+                userGameDto.getUserId(),
+                userGameDto.getGameId(),
+                userGameDto.getRate());
     }
 
 }
