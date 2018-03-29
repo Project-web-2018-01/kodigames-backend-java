@@ -14,7 +14,6 @@ public final class Score {
     public Score(Long id, int score, Long userGameId) {
         this.id = id;
         this.score = score;
-        this.userGameId = userGameId;
     }
 
     public Score() {
@@ -42,7 +41,6 @@ public final class Score {
         this.score = score;
     }
 
-    @NotNull
     @ManyToOne
     @JoinColumn(name = "USER_GAME_ID")
     public Long getUserGameId() {

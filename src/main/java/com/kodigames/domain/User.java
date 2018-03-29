@@ -13,7 +13,7 @@ public final class User {
     private String surname;
     private String login;
     private String password;
-    private List<Game> games = new ArrayList<>();
+    private List<UserGame> userGameList = new ArrayList<> ();
 
     public User(Long id, String firstName, String surname, String login, String password) {
         this.id = id;
@@ -21,7 +21,6 @@ public final class User {
         this.surname = surname;
         this.login = login;
         this.password = password;
-
     }
 
     public User() {
@@ -57,6 +56,20 @@ public final class User {
     @Column(name = "PASSWORD")
     public String getPassword() {
         return password;
+    }
+
+    @OneToMany(
+            targetEntity = UserGame.class,
+            cascade = CascadeType.ALL,
+            mappedBy = "USER_ID",
+            fetch = FetchType.LAZY
+    )
+    public List<UserGame> getUserGameList() {
+        return userGameList;
+    }
+
+    public void setUserGameList(List<UserGame> userGameList) {
+        this.userGameList = userGameList;
     }
 
     public void setId(Long id) {

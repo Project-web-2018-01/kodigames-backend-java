@@ -11,7 +11,7 @@ public final class Game {
     private Long id;
     private String name;
     private String desc;
-    private List<UserGames> userGamesList = new ArrayList<> ();
+    private List<UserGame> userGameList = new ArrayList<> ();
 
     public Game() {
     }
@@ -43,17 +43,17 @@ public final class Game {
     }
 
     @OneToMany(
-            targetEntity = UserGames.class,
+            targetEntity = UserGame.class,
             cascade = CascadeType.ALL,
-            mappedBy = "games",
+            mappedBy = "GAME_ID",
             fetch = FetchType.LAZY
     )
-    public List<UserGames> getUserGamesList() {
-        return userGamesList;
+    public List<UserGame> getUserGameList() {
+        return userGameList;
     }
 
-    public void setUserGamesList(List<UserGames> userGamesList) {
-        this.userGamesList = userGamesList;
+    public void setUserGameList(List<UserGame> userGameList) {
+        this.userGameList = userGameList;
     }
 
     public void setId(Long id) {
