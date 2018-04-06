@@ -9,14 +9,15 @@ public final class Score {
 
     private Long id;
     private int score;
-    private Long userGameId;
-
-    public Score(Long id, int score, Long userGameId) {
-        this.id = id;
-        this.score = score;
-    }
+    private UserGame userGame;
 
     public Score() {
+    }
+
+    public Score(Long id, int score, UserGame userGame) {
+        this.id = id;
+        this.score = score;
+        this.userGame = userGame;
     }
 
     @Id
@@ -43,11 +44,11 @@ public final class Score {
 
     @ManyToOne
     @JoinColumn(name = "USER_GAME_ID")
-    public Long getUserGameId() {
-        return userGameId;
+    public UserGame getUserGame() {
+        return userGame;
     }
 
-    public void setUserGameId(Long userGameId) {
-        this.userGameId = userGameId;
+    public void setUserGame(UserGame userGame) {
+        this.userGame = userGame;
     }
 }

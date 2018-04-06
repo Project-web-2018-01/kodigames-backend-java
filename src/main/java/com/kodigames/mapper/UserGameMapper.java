@@ -8,15 +8,15 @@ public class UserGameMapper {
 
     public UserGameDto mapToUserGameDto(final UserGame userGame) {
         return new UserGameDto(userGame.getId(),
-                userGame.getUserId(),
-                userGame.getGameId(),
+                userGame.getUser (),
+                userGame.getGame (),
                 userGame.getRate());
     }
 
     public UserGame mapToUserGame(final UserGameDto userGameDto) {
         return new UserGame(userGameDto.getId(),
-                userGameDto.getUserId(),
-                userGameDto.getGameId(),
+                userGameDto.getUser (),
+                userGameDto.getGame (),
                 userGameDto.getRate());
     }
 

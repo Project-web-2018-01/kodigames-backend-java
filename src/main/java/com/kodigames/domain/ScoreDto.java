@@ -4,12 +4,12 @@ public final class ScoreDto {
 
     private Long id;
     private int score;
-    private Long userGameId;
+    private UserGame userGame;
 
-    public ScoreDto(Long id, int score, Long userGameId) {
+    public ScoreDto(Long id, int score, UserGame userGame) {
         this.id = id;
         this.score = score;
-        this.userGameId = userGameId;
+        this.userGame = userGame;
     }
 
     public Long getId() {
@@ -28,12 +28,12 @@ public final class ScoreDto {
         this.score = score;
     }
 
-    public Long getUserGameId() {
-        return userGameId;
+    public UserGame getUserGame() {
+        return userGame;
     }
 
-    public void setUserGameId(Long userGameId) {
-        this.userGameId = userGameId;
+    public void setUserGame(UserGame userGame) {
+        this.userGame = userGame;
     }
 }
 

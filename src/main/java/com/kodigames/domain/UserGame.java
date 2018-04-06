@@ -9,15 +9,15 @@ import java.util.List;
 @Table(name = "USER_GAME")
 public final class UserGame {
     private Long id;
-    private Long userId;
-    private Long gameId;
+    private User user;
+    private Game game;
     private int rate;
     private List<Score> scoreList = new ArrayList<> ();
 
-    public UserGame(Long id, Long userId, Long gameId, int rate) {
+    public UserGame(Long id, User user, Game game, int rate) {
         this.id = id;
-        this.userId = userId;
-        this.gameId = gameId;
+        this.user = user;
+        this.game = game;
         this.rate = rate;
     }
 
@@ -38,22 +38,22 @@ public final class UserGame {
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
-    public Long getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @ManyToOne
     @JoinColumn(name = "GAME_ID")
-    public Long getGameId() {
-        return gameId;
+    public Game getGame() {
+        return game;
     }
 
-    public void setGameId(Long gameId) {
-        this.gameId = gameId;
+    public void setGame(Game game) {
+        this.game = game;
     }
 
     @NotNull
@@ -69,7 +69,7 @@ public final class UserGame {
     @OneToMany(
             targetEntity = Score.class,
             cascade = CascadeType.ALL,
-            mappedBy = "USER_GAME_ID",
+            mappedBy = "userGame",
             fetch = FetchType.LAZY
     )
     public List<Score> getScoreList() {

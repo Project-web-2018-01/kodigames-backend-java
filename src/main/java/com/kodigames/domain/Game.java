@@ -45,7 +45,7 @@ public final class Game {
     @OneToMany(
             targetEntity = UserGame.class,
             cascade = CascadeType.ALL,
-            mappedBy = "GAME_ID",
+            mappedBy = "game",
             fetch = FetchType.LAZY
     )
     public List<UserGame> getUserGameList() {
