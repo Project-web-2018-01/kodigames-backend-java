@@ -13,13 +13,13 @@ public final class Game {
     private String desc;
     private List<UserGame> userGameList = new ArrayList<> ();
 
-    public Game() {
-    }
-
     public Game(Long id, String name, String desc) {
         this.id = id;
         this.name = name;
         this.desc = desc;
+    }
+
+    public Game() {
     }
 
     @Id

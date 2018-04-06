@@ -11,13 +11,13 @@ public final class Score {
     private int score;
     private UserGame userGame;
 
-    public Score() {
-    }
-
     public Score(Long id, int score, UserGame userGame) {
         this.id = id;
         this.score = score;
         this.userGame = userGame;
+    }
+
+    public Score() {
     }
 
     @Id
