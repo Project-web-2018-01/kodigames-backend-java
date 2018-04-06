@@ -1,21 +1,33 @@
 package com.kodigames.domain;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "USER_GAME")
 public final class UserGame {
     private Long id;
-    private Long userId;
-    private Long gameId;
+    private User user;
+    private Game game;
     private int rate;
+    private List<Score> scoreList = new ArrayList<> ();
 
-    public UserGame(Long id, Long userId, Long gameId, int rate) {
+    public UserGame(Long id, User user, Game game, int rate) {
         this.id = id;
-        this.userId = userId;
-        this.gameId = gameId;
+        this.user = user;
+        this.game = game;
         this.rate = rate;
     }
 
     public UserGame() {
     }
 
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ID", unique = true)
     public Long getId() {
         return id;
     }
@@ -24,28 +36,48 @@ public final class UserGame {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    @ManyToOne
+    @JoinColumn(name = "USER_ID")
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public Long getGameId() {
-        return gameId;
+    @ManyToOne
+    @JoinColumn(name = "GAME_ID")
+    public Game getGame() {
+        return game;
     }
 
-    public void setGameId(Long gameId) {
-        this.gameId = gameId;
+    public void setGame(Game game) {
+        this.game = game;
     }
 
+    @NotNull
+    @Column(name = "RATE")
     public int getRate() {
         return rate;
     }
 
     public void setRate(int rate) {
         this.rate = rate;
+    }
+
+    @OneToMany(
+            targetEntity = Score.class,
+            cascade = CascadeType.ALL,
+            mappedBy = "userGame",
+            fetch = FetchType.LAZY
+    )
+    public List<Score> getScoreList() {
+        return scoreList;
+    }
+
+    public void setScoreList(List<Score> scoreList) {
+        this.scoreList = scoreList;
     }
 }
 

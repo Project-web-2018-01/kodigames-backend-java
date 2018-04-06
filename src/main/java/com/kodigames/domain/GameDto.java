@@ -11,9 +11,7 @@ public final class GameDto {
         this.desc = desc;
     }
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
 
     public String getName() {
         return name;
@@ -34,5 +32,4 @@ public final class GameDto {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-
 }

@@ -2,14 +2,14 @@ package com.kodigames.domain;
 
 public final class UserGameDto {
     private Long id;
-    private Long userId;
-    private Long gameId;
+    private User user;
+    private Game game;
     private int rate;
 
-    public UserGameDto(Long id, Long userId, Long gameId, int rate) {
+    public UserGameDto(Long id, User user, Game game, int rate) {
         this.id = id;
-        this.userId = userId;
-        this.gameId = gameId;
+        this.user = user;
+        this.game = game;
         this.rate = rate;
     }
 
@@ -21,20 +21,20 @@ public final class UserGameDto {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public Long getGameId() {
-        return gameId;
+    public Game getGame() {
+        return game;
     }
 
-    public void setGameId(Long gameId) {
-        this.gameId = gameId;
+    public void setGame(Game game) {
+        this.game = game;
     }
 
     public int getRate() {

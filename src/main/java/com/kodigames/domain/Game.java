@@ -2,6 +2,8 @@ package com.kodigames.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "GAMES")
@@ -9,14 +11,15 @@ public final class Game {
     private Long id;
     private String name;
     private String desc;
-
-    public Game() {
-    }
+    private List<UserGame> userGameList = new ArrayList<> ();
 
     public Game(Long id, String name, String desc) {
         this.id = id;
         this.name = name;
         this.desc = desc;
+    }
+
+    public Game() {
     }
 
     @Id
@@ -39,6 +42,20 @@ public final class Game {
         return desc;
     }
 
+    @OneToMany(
+            targetEntity = UserGame.class,
+            cascade = CascadeType.ALL,
+            mappedBy = "game",
+            fetch = FetchType.LAZY
+    )
+    public List<UserGame> getUserGameList() {
+        return userGameList;
+    }
+
+    public void setUserGameList(List<UserGame> userGameList) {
+        this.userGameList = userGameList;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -50,5 +67,4 @@ public final class Game {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-
 }
