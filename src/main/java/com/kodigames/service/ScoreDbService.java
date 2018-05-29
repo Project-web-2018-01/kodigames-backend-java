@@ -13,21 +13,16 @@ public class ScoreDbService {
     @Autowired
     private ScoreRepository scoreRepository;
 
-    public void createScore(Score score) {
-        scoreRepository.save(score);
-    }
-
-    public Optional<Score> getScore(Long id) {
-        return scoreRepository.findById(id);
-    }
-
-    public Score updateScore(Score score) {
+    public Score createScore(Score score) {
         return scoreRepository.save(score);
     }
 
-    public void deleteScore(Long id) {
-        scoreRepository.deleteById(id);
+    public Optional<Score> getScore(Long scoreId) {
+        return scoreRepository.findById(scoreId);
     }
 
+    public void deleteScore(Long scoreId) {
+        scoreRepository.deleteById(scoreId);
+    }
 
 }
