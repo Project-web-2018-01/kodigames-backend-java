@@ -21,7 +21,7 @@ public class UserDbService {
     }
 
     public User updateUser(Long userId, User user) {
-        return userRepository.update(userId, user);
+        return userRepository.update(user, userId);
     }
 
     public void deleteUser(Long userId) {

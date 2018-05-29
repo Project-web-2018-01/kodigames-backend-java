@@ -4,5 +4,5 @@ import com.kodigames.domain.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Long> {
-    User update(Long id, User user);
+    User update(User user, Long id);
 }
