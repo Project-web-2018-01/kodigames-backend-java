@@ -13,7 +13,7 @@ public class UserDbService {
     @Autowired
     private UserRepository userRepository;
 
-    public void saveUser(User user) {
+    public void createUser(User user) {
         userRepository.save(user);
     }
 
@@ -21,8 +21,8 @@ public class UserDbService {
         return userRepository.findById(userId);
     }
 
-    public User updateUser(Long id, UserDto userDto) {
-        return userRepository.update(id, userDto);
+    public User updateUser(Long userId, UserDto userDto) {
+        return userRepository.update(userId, userDto);
     }
 
     public void deleteUser(Long userId) {
